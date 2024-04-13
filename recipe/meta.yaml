@@ -1,5 +1,5 @@
 {% set name = "photochem" %}
-{% set version = "0.4.5" %}
+{% set version = "0.5.3" %}
 
 package:
   name: {{ name|lower }}
@@ -7,11 +7,11 @@ package:
 
 source:
   url: https://github.com/Nicholaswogan/photochem/releases/download/v{{ version }}/photochem-{{ version }}_withdata.tar.gz
-  sha256: a9780a3ec025df3e0a6dc4893fa65b4c1f9ac01988314de2f44bc05940f2a840
+  sha256: a86660451adfbde7b339b828477177619e632ccb0691097cbe2713392b81451f
 
 build:
   skip: true  # [win]
-  number: 1
+  number: 0
 
 requirements:
   build:
@@ -26,8 +26,7 @@ requirements:
     - {{ compiler('fortran') }}
     - make
     - cmake
-    - llvm-openmp  # [osx]
-    - libgomp      # [linux]
+    - fypp
   host:
     - python
     - pip
@@ -40,6 +39,9 @@ requirements:
     - pkgconfig
     - zlib
     - hdf5
+    - liblapack
+    - llvm-openmp  # [osx]
+    - libgomp      # [linux]
   run:
     - python
     - {{ pin_compatible('numpy') }}
