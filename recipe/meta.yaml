@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/Nicholaswogan/photochem/releases/download/v{{ version }}/photochem-{{ version }}_withdata.tar.gz
-  sha256: a86660451adfbde7b339b828477177619e632ccb0691097cbe2713392b81451f
+  sha256: 3e7f2af3c61ccce1cd8256bdc7271c74d4ed694fe6b3b40ed694320f0ba029f3
 
 build:
   skip: true  # [win]
@@ -28,6 +28,7 @@ requirements:
     - cmake
     - llvm-openmp  # [osx]
     - libgomp      # [linux]
+    - fypp
   host:
     - python
     - pip
@@ -40,6 +41,7 @@ requirements:
     - pkgconfig
     - zlib
     - hdf5
+    - fypp
   run:
     - python
     - {{ pin_compatible('numpy') }}
