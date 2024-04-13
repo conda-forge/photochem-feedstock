@@ -42,6 +42,7 @@ requirements:
     - hdf5
     - fypp
     - libblas
+    - libcblas
     - liblapack
   run:
     - python
