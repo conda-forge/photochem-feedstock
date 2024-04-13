@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/Nicholaswogan/photochem/releases/download/v{{ version }}/photochem-{{ version }}_withdata.tar.gz
-  sha256: ae912c1bc35a7b31f52ca632c540e8cabddc7f352e2bda6f7bff8c78cacd019c
+  sha256: ae2f9f3107eb372cdee13474cfa07a4198f75b136739b9918f2c3d0e84a1bcf1
 
 build:
   skip: true  # [win]
@@ -41,6 +41,8 @@ requirements:
     - zlib
     - hdf5
     - fypp
+    - libblas
+    - liblapack
   run:
     - python
     - {{ pin_compatible('numpy') }}
