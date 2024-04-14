@@ -1,5 +1,5 @@
 {% set name = "photochem" %}
-{% set version = "0.4.5" %}
+{% set version = "0.5.3" %}
 
 package:
   name: {{ name|lower }}
@@ -7,11 +7,11 @@ package:
 
 source:
   url: https://github.com/Nicholaswogan/photochem/releases/download/v{{ version }}/photochem-{{ version }}_withdata.tar.gz
-  sha256: a9780a3ec025df3e0a6dc4893fa65b4c1f9ac01988314de2f44bc05940f2a840
+  sha256: ae2f9f3107eb372cdee13474cfa07a4198f75b136739b9918f2c3d0e84a1bcf1
 
 build:
   skip: true  # [win]
-  number: 1
+  number: 0
 
 requirements:
   build:
@@ -20,7 +20,7 @@ requirements:
     - cython                                 # [build_platform != target_platform]
     - numpy                                  # [build_platform != target_platform]
     - python                                 # [build_platform != target_platform]
-    - cross-python_{{ target_platform }}     # [build_platform != target_platform]
+    - fypp                                   # [build_platform != target_platform]
     - {{ compiler('cxx') }}
     - {{ compiler('c') }}
     - {{ compiler('fortran') }}
@@ -40,12 +40,17 @@ requirements:
     - pkgconfig
     - zlib
     - hdf5
+    - fypp
+    - libblas
+    - libcblas
+    - liblapack
   run:
     - python
     - {{ pin_compatible('numpy') }}
     - scipy
     - pyyaml
     - numba
+    - blis      # [linux]
 
 test:
   imports:
