@@ -44,13 +44,13 @@ requirements:
     - libblas
     - libcblas
     - liblapack
-    - blis       # [linux]
   run:
     - python
     - {{ pin_compatible('numpy') }}
     - scipy
     - pyyaml
     - numba
+    - blis      # [linux]
 
 test:
   imports:
