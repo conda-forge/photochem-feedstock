@@ -11,7 +11,7 @@ source:
 
 build:
   skip: true  # [win]
-  number: 0
+  number: 1
 
 requirements:
   build:
@@ -23,6 +23,7 @@ requirements:
     - fypp                                   # [build_platform != target_platform]
     - {{ compiler('cxx') }}
     - {{ compiler('c') }}
+    - {{ stdlib("c") }}
     - {{ compiler('fortran') }}
     - make
     - cmake
@@ -46,7 +47,6 @@ requirements:
     - liblapack
   run:
     - python
-    - {{ pin_compatible('numpy') }}
     - scipy
     - pyyaml
     - numba
