@@ -23,6 +23,7 @@ requirements:
     - {{ compiler('cxx') }}
     - {{ compiler('c') }}
     - {{ compiler('fortran') }}
+    - {{ stdlib("c") }}
     - make
     - cmake
     - llvm-openmp  # [osx]
