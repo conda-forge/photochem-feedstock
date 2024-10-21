@@ -40,7 +40,7 @@ requirements:
     - ninja
     - pkgconfig
     - zlib
-    - hdf5 >=1.14
+    - hdf5 >=1.14=nompi*
     - fypp
     - libblas
     - libcblas
@@ -51,7 +51,7 @@ requirements:
     - scipy
     - pyyaml
     - numba
-    - h5py >=3.12
+    - h5py >=3.12=nompi*
     - astropy
     - blis      # [linux]
 
