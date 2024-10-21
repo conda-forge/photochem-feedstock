@@ -40,14 +40,14 @@ requirements:
     - ninja
     - pkgconfig
     - zlib
-    - hdf5
+    - hdf5 >=1.14
     - fypp
     - libblas
     - libcblas
     - liblapack
   run:
     - python
-    - photochem_clima_data >=0.2.0
+    - photochem_clima_data ==0.2.0
     - scipy
     - pyyaml
     - numba
