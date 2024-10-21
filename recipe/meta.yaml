@@ -40,7 +40,6 @@ requirements:
     - ninja
     - pkgconfig
     - zlib
-    - hdf5
     - h5py
     - fypp
     - libblas
