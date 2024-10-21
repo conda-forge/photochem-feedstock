@@ -47,11 +47,11 @@ requirements:
     - liblapack
   run:
     - python
-    - photochem_clima_data==0.2.0
+    - photochem_clima_data >=0.2.0
     - scipy
     - pyyaml
     - numba
-    - h5py
+    - h5py >=3.12
     - astropy
     - blis      # [linux]
 
