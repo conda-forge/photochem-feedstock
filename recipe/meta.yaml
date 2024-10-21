@@ -41,6 +41,7 @@ requirements:
     - pkgconfig
     - zlib
     - hdf5
+    - h5py
     - fypp
     - libblas
     - libcblas
@@ -51,7 +52,6 @@ requirements:
     - scipy
     - pyyaml
     - numba
-    - h5py
     - astropy
     - blis      # [linux]
 
