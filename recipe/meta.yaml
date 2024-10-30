@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/Nicholaswogan/photochem/archive/v{{ version }}.tar.gz
-  sha256: 94679523d7c62b8c69335dbdb716cf8ce4d7f4bea8344eae2b8db22c8628c5ae
+  sha256: 545e33699afd87804fcb4f5cdd31c4767453e8aeee34a1549868e035d12ff258
 
 build:
   skip: true  # [win]
