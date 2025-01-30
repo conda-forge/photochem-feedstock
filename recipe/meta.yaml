@@ -52,7 +52,7 @@ requirements:
     - pyyaml
     - numba
     - h5py
-    - astropy
+    - astropy-base
     - threadpoolctl
     - blis      # [linux]
 
