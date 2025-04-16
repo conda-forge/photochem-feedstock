@@ -43,6 +43,7 @@ requirements:
     - hdf5 <=1.14.3
     - fypp
     - libblas
+    - libcblas
     - liblapack
   run:
     - python
@@ -55,6 +56,7 @@ requirements:
     - threadpoolctl
     - requests
     - blis      # [linux]
+    - mkl       # [linux]
 
 test:
   imports:
