@@ -1,5 +1,5 @@
 {% set name = "photochem" %}
-{% set version = "0.6.6" %}
+{% set version = "0.6.7" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/Nicholaswogan/photochem/archive/v{{ version }}.tar.gz
-  sha256: 3d69294b89c9b55e2ccccfccb161ab5a44dcb5d3fd7ca5aa2b2daed32c3dbfc3
+  sha256: 576c4a3cbc437194af613ffa94165a6737f9b3637338c303fe42febe61dca1c9
 
 build:
   skip: true  # [win]
@@ -40,7 +40,7 @@ requirements:
     - ninja
     - pkgconfig
     - zlib
-    - hdf5 <=1.14.3
+    - hdf5
     - fypp
     - libblas
     - libcblas
@@ -53,6 +53,7 @@ requirements:
     - numba
     - h5py
     - astropy-base
+    - astroquery
     - threadpoolctl
     - requests
     - blis      # [linux]
