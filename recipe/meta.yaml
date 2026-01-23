@@ -1,5 +1,5 @@
 {% set name = "photochem" %}
-{% set version = "0.6.8" %}
+{% set version = "0.7.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,11 +7,16 @@ package:
 
 source:
   url: https://github.com/Nicholaswogan/photochem/archive/v{{ version }}.tar.gz
-  sha256: d46ef1f6f9826f0524f0a5a8ba101d92c3ead4de5ba6c6cd3780126acc8c067c
+  sha256: dd1d3775df43ab34f817495189757b883152d0df2caed518f87954ca68f8ec97
 
 build:
   skip: true  # [win]
   number: 0
+  ignore_run_exports:
+    - libzlib
+    - python
+    - libcxx
+    - numpy
 
 requirements:
   build:
@@ -19,7 +24,6 @@ requirements:
     - cross-python_{{ target_platform }}     # [build_platform != target_platform]
     - cython                                 # [build_platform != target_platform]
     - numpy                                  # [build_platform != target_platform]
-    - python                                 # [build_platform != target_platform]
     - fypp                                   # [build_platform != target_platform]
     - {{ compiler('cxx') }}
     - {{ compiler('c') }}
@@ -45,9 +49,11 @@ requirements:
     - libblas
     - libcblas
     - liblapack
+    - llvm-openmp  # [osx]
+    - libgcc  # [osx and x86_64]
   run:
     - python
-    - photochem_clima_data ==0.3.0
+    - photochem_clima_data ==0.3.1
     - scipy
     - pyyaml
     - numba
@@ -56,6 +62,7 @@ requirements:
     - astroquery
     - threadpoolctl
     - requests
+    - libgcc  # [osx and x86_64]
     - blis      # [linux]
     - mkl       # [linux]
 
@@ -68,7 +75,7 @@ test:
 about:
   home: https://github.com/Nicholaswogan/photochem
   license: GPL-2.0-or-later
-  license_family: GPL3
+  license_family: GPL2
   license_file: LICENSE
   summary: A chemical model of planetary atmospheres
 
