@@ -1,5 +1,5 @@
 {% set name = "photochem" %}
-{% set version = "0.6.8" %}
+{% set version = "0.7.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/Nicholaswogan/photochem/archive/v{{ version }}.tar.gz
-  sha256: d46ef1f6f9826f0524f0a5a8ba101d92c3ead4de5ba6c6cd3780126acc8c067c
+  sha256: dd1d3775df43ab34f817495189757b883152d0df2caed518f87954ca68f8ec97
 
 build:
   skip: true  # [win]
@@ -47,7 +47,7 @@ requirements:
     - liblapack
   run:
     - python
-    - photochem_clima_data ==0.3.0
+    - photochem_clima_data ==0.3.1
     - scipy
     - pyyaml
     - numba
