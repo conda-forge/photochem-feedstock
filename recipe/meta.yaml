@@ -13,11 +13,8 @@ build:
   skip: true  # [win]
   number: 0
   ignore_run_exports:
-    - libblas
-    - liblapack
     - libzlib
     - python
-    - libcblas
     - libcxx
     - numpy
 
