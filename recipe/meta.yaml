@@ -1,5 +1,5 @@
 {% set name = "photochem" %}
-{% set version = "0.8.1" %}
+{% set version = "0.8.2" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/Nicholaswogan/photochem/archive/v{{ version }}.tar.gz
-  sha256: 03925f1d7de40a8e89cc13f14eec5c2738835807a3657ed20252df1881431b94
+  sha256: 1f057a51b84005c50df57a0bf00036f4543b70291752169a29e545238b7464f7
 
 build:
   skip: true  # [win]
