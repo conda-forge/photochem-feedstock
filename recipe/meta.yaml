@@ -1,5 +1,5 @@
 {% set name = "photochem" %}
-{% set version = "0.8.2" %}
+{% set version = "0.8.3" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/Nicholaswogan/photochem/archive/v{{ version }}.tar.gz
-  sha256: 1f057a51b84005c50df57a0bf00036f4543b70291752169a29e545238b7464f7
+  sha256: 6598aedd3fc6c3be070385e80ea1e9d81ea01325a861c5e06ef7250e4c226ecf
 
 build:
   skip: true  # [win]
@@ -71,6 +71,14 @@ test:
     - photochem
     - photochem.clima
     - photochem.equilibrate
+  files:
+    - check_noexecstack.py  # [linux]
+    - test_photochem.py
+  requires:
+    - binutils  # [linux]
+  commands:
+    - python check_noexecstack.py  # [linux]
+    - python test_photochem.py
 
 about:
   home: https://github.com/Nicholaswogan/photochem
