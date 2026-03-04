@@ -1,14 +1,15 @@
 import glob
 import os
 import subprocess
-import sys
+import sysconfig
 
 def main():
-    pattern = os.path.join(sys.prefix, "lib", "python*", "site-packages", "photochem", "*.so")
-    libs = glob.glob(pattern)
+    platlib = sysconfig.get_path("platlib")
+    pattern = os.path.join(platlib, "photochem", "*.so")
+    libs = sorted(set(glob.glob(pattern)))
     print("Found libs:", libs)
     if not libs:
-        raise SystemExit("No photochem shared libraries found in test env.")
+        raise SystemExit(f"No photochem shared libraries found under {pattern}")
 
     bad = False
     for lib in libs:
