@@ -1,5 +1,5 @@
 {% set name = "photochem" %}
-{% set version = "0.8.3" %}
+{% set version = "0.8.4" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/Nicholaswogan/photochem/archive/v{{ version }}.tar.gz
-  sha256: 6598aedd3fc6c3be070385e80ea1e9d81ea01325a861c5e06ef7250e4c226ecf
+  sha256: cf5814212453fbd72721cebfc34eea92fbf4517aa15762f381886facb749f6c2
 
 build:
   skip: true  # [win]
@@ -53,6 +53,7 @@ requirements:
     - libgcc  # [osx and x86_64]
   run:
     - python
+    - numpy
     - photochem_clima_data ==0.3.1
     - scipy
     - pyyaml
@@ -60,6 +61,8 @@ requirements:
     - h5py
     - astropy-base
     - astroquery
+    - stsynphot
+    - synphot
     - threadpoolctl
     - requests
     - libgcc  # [osx and x86_64]
