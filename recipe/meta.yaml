@@ -30,7 +30,7 @@ requirements:
     - {{ stdlib("c") }}
     - {{ compiler('fortran') }}
     - make
-    - cmake >=3.15
+    - cmake >=3.15,<4.0
     - llvm-openmp  # [osx]
     - libgomp      # [linux]
   host:
