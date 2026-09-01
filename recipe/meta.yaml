@@ -40,7 +40,6 @@ requirements:
     - numpy
     - cython
     - ninja
-    - pkgconfig
     - zlib
     - hdf5
     - fypp
@@ -64,8 +63,6 @@ requirements:
     - threadpoolctl
     - requests
     - libgcc  # [osx and x86_64]
-    - blis      # [linux]
-    - mkl       # [linux]
 
 test:
   imports:
