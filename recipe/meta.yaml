@@ -1,5 +1,5 @@
 {% set name = "photochem" %}
-{% set version = "0.8.4" %}
+{% set version = "0.9.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/Nicholaswogan/photochem/archive/v{{ version }}.tar.gz
-  sha256: cf5814212453fbd72721cebfc34eea92fbf4517aa15762f381886facb749f6c2
+  sha256: 9eef0fdd0ed89e3ecd3c04a0951222f4690a084f6c52491bc9a8106dbda36ec9
 
 build:
   skip: true  # [win]
@@ -30,19 +30,16 @@ requirements:
     - {{ stdlib("c") }}
     - {{ compiler('fortran') }}
     - make
-    - cmake <4.0
+    - cmake >=3.15,<4.0
     - llvm-openmp  # [osx]
     - libgomp      # [linux]
   host:
     - python
     - pip
-    - setuptools
-    - wheel
-    - scikit-build
+    - scikit-build-core >=1.0
     - numpy
     - cython
     - ninja
-    - pkgconfig
     - zlib
     - hdf5
     - fypp
@@ -54,7 +51,7 @@ requirements:
   run:
     - python
     - numpy
-    - photochem_clima_data ==0.3.1
+    - photochem_clima_data ==0.3.2
     - scipy
     - pyyaml
     - numba
@@ -66,8 +63,6 @@ requirements:
     - threadpoolctl
     - requests
     - libgcc  # [osx and x86_64]
-    - blis      # [linux]
-    - mkl       # [linux]
 
 test:
   imports:
